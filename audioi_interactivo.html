@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Audio Interactivo Accesible</title>
+<style>
+body{
+  font-family: Arial;
+  text-align:center;
+  background:#f4f4f4;
+}
+button{
+  font-size:22px;
+  padding:20px;
+  margin:15px;
+  width:80%;
+  max-width:400px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>🎧 Explorando el bosque</h1>
+
+<button onclick="caminar()">🌿 Caminar por el sendero</button>
+<button onclick="rio()">💧 Escuchar el río</button>
+<button onclick="animales()">🐦 Escuchar los animales</button>
+
+<script>
+function hablar(texto){
+  const voz = new SpeechSynthesisUtterance(texto);
+  voz.lang = "es-ES";
+  voz.rate = 0.9;
+  speechSynthesis.speak(voz);
+}
+
+function caminar(){
+  hablar("Caminas por un sendero suave. Bajo tus pies sientes hojas secas crujir. El aire es fresco y huele a naturaleza.");
+}
+
+function rio(){
+  hablar("Te acercas al río. Escuchas el agua fluir suavemente. El sonido es relajante y constante.");
+}
+
+function animales(){
+  hablar("A tu alrededor se escuchan pájaros cantando. Algunos trinan rápido, otros lentamente.");
+}
+</script>
+
+</body>
+</html>
